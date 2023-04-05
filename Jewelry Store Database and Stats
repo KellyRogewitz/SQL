@@ -1,0 +1,30 @@
+--Create a jewelry store database
+
+CREATE TABLE Jewelry_Store (id INTEGER PRIMARY KEY, name TEXT, kind TEXT,quantity INTEGER, price INTEGER);
+
+INSERT INTO Jewelry_Store VALUES (1, "butterfly", "earrings", 22, 17);
+INSERT INTO Jewelry_Store VALUES (2, "butterfly", "bracelet", 22, 20);
+INSERT INTO Jewelry_Store VALUES (3, "butterfly", "ring", 22, 10);
+INSERT INTO Jewelry_Store VALUES (4, "butterfly", "necklace", 22, 27);
+INSERT INTO Jewelry_Store VALUES (5, "dragonfly_E", "earrings", 22, 30);
+INSERT INTO Jewelry_Store VALUES (6, "dragonflyb", "bracelet", 50, 24);
+INSERT INTO Jewelry_Store VALUES (7, "dragonflyr", "ring", 52, 25);
+INSERT INTO Jewelry_Store VALUES (8, "dragonflyn", "necklace", 52, 70);
+INSERT INTO Jewelry_Store VALUES (9, "star", "earrings", 22, 17);
+INSERT INTO Jewelry_Store VALUES (10, "moon", "earrings", 70, 17);
+INSERT INTO Jewelry_Store VALUES (11, "sun", "earrings", 22, 14);
+INSERT INTO Jewelry_Store VALUES (12, "tree", "necklace", 22, 32);
+INSERT INTO Jewelry_Store VALUES (13, "flower", "ring", 22, 10);
+INSERT INTO Jewelry_Store VALUES (14, "leaf", "bracelet", 32, 40);
+INSERT INTO Jewelry_Store VALUES (15, "leaves", "ring", 100, 27);
+
+/* display the database ordered by price. */
+SELECT * FROM Jewelry_Store ORDER BY price;
+
+/* How many items cost more than 20 dollars? */
+SELECT COUNT(*) AS greater_than_20
+    FROM Jewelry_Store WHERE price > 20;
+    
+    /* What is the average price? */
+    SELECT AVG(price) 
+    FROM Jewelry_Store;
