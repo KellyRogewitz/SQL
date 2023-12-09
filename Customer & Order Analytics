@@ -68,3 +68,42 @@ ON FEB.orderid=cust.order_id
 WHERE Feb.Quantity>2
 AND length(orderid) = 6
 AND orderid <> 'Order ID';
+
+
+/* Use advanced Data Filtering Techniques to
+ query a database with multiple tables. */
+
+
+/*List all the products sold in Los Angeles in February, and include how many of each were sold.*/
+
+SELECT FebSales.Product, SUM (FebSales.Quantity)
+FROM BIT_DB.FebSales 
+WHERE FebSales.location like '%Los Angeles%'
+GROUP BY FebSales.Product;
+
+
+/* Query information about specific order dates*/
+
+SELECT orderdate
+FROM BIT_DB.FebSales
+WHERE orderdate between '02/13/19 00:00' AND '02/18/19 00:00';
+
+SELECT location
+FROM BIT_DB.FebSales
+WHERE orderdate = '02/18/19 01:35';
+
+SELECT sum(quantity) 
+FROM BIT_DB.FebSales
+WHERE orderdate like '02/18/19%';
+
+
+/* Use dinstinct satements with a like operator */
+SELECT distinct Product
+FROM BIT_DB.FebSales
+WHERE Product like '%Batteries%';
+
+SELECT distinct Product, Price
+FROM BIT_DB.FebSales 
+WHERE Price like '%.99';
+
+
